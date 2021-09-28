@@ -31,7 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Dcodegroup\\LaravelTimesheets\\": "src"
+      "Dcodegroup\\LaravelTimesheet\\": "src"
     }
   },
   "scripts": {
@@ -44,7 +44,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Dcodegroup\\LaravelTimesheets\\LaravelTimesheetsServiceProvider"
+        "Dcodegroup\\LaravelTimesheet\\LaravelTimesheetServiceProvider"
       ]
     }
   }
