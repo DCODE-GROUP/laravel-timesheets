@@ -6,7 +6,7 @@ use Dcodegroup\LaravelTimesheet\Commands\InstallCommand;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelTimesheetServiceProvider extends ServiceProvider
+class LaravelTimesheetsServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
