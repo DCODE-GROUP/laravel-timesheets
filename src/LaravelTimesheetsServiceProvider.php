@@ -34,7 +34,7 @@ class LaravelTimesheetsServiceProvider extends ServiceProvider
      */
     protected function offerPublishing()
     {
-        if (!Schema::hasTable('timesheets') && !class_exists('CreateTimesheetsTable')) {
+        if (! Schema::hasTable('timesheets') && ! class_exists('CreateTimesheetsTable')) {
             $timestamp = date('Y_m_d_His', time());
 
             $this->publishes([
