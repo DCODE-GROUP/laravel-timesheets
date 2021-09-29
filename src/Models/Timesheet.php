@@ -15,4 +15,14 @@ class Timesheet extends Model
      * @var string[]|bool
      */
     protected $guarded = [];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'start' => 'datetime',
+        'stop'  => 'datetime',
+    ];
 }
