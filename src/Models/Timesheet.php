@@ -14,5 +14,5 @@ class Timesheet extends Model
      *
      * @var string[]|bool
      */
-    protected $guarded = ['id'];
+    protected $guarded = [];
 }
