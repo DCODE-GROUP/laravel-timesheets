@@ -23,6 +23,6 @@ class Timesheet extends Model
      */
     protected $casts = [
         'start' => 'datetime',
-        'stop'  => 'datetime',
+        'stop' => 'datetime',
     ];
 }
