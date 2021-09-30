@@ -29,6 +29,6 @@ class Timesheet extends Model
 
     public function timesheetable(): MorphTo
     {
-        return $this->morhpTo();
+        return $this->morphTo();
     }
 }
