@@ -4,6 +4,7 @@ namespace Dcodegroup\LaravelTimesheet\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Timesheet extends Model
 {
@@ -25,4 +26,9 @@ class Timesheet extends Model
         'start' => 'datetime',
         'stop' => 'datetime',
     ];
+
+    public function timesheetable(): MorphTo
+    {
+        return $this->morhpTo();
+    }
 }
