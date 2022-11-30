@@ -46,7 +46,6 @@ class LaravelTimesheetServiceProvider extends ServiceProvider
         } catch (Exception $e) {
             report($e);
         }
-
     }
 
     protected function registerCommands()
