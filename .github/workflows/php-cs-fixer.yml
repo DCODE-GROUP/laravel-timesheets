@@ -3,21 +3,31 @@ name: Check & fix styling
 on: [push]
 
 jobs:
-    php-cs-fixer:
-        runs-on: ubuntu-latest
+  php-cs-fixer:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-            - name: Run PHP CS Fixer
-              uses: docker://oskarstark/php-cs-fixer-ga
-              with:
-                  args: --config=.php_cs.dist.php --allow-risky=yes
+      - name: Cache Pint
+        uses: actions/cache@v3
+        with:
+          path: ./pint.cache
+          key: ${{ runner.os }}-pint-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-pint-
 
-            - name: Commit changes
-              uses: stefanzweifel/git-auto-commit-action@v4
-              with:
-                  commit_message: Fix styling
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: pint
+
+      - name: Run Laravel Pint (PHP CS Fixer)
+        run: pint
+        continue-on-error: true
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fix PHP Syntax Styling

@@ -32,7 +32,9 @@ class Timesheet extends Model
      * Used by dcodegroup/laravel-xero-timesheet-sync
      */
     public const XERO_TIMESHEET_STATUS_DRAFT = 'DRAFT';
+
     public const XERO_TIMESHEET_STATUS_PROCESSED = 'PROCESSED';
+
     public const XERO_TIMESHEET_STATUS_APPROVED = 'APPROVED';
 
     public function timesheetable(): MorphTo

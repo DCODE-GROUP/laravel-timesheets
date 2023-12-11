@@ -13,7 +13,7 @@ class CreateTimesheetsTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('timesheets')) {
+        if (! Schema::hasTable('timesheets')) {
             Schema::create('timesheets', function (Blueprint $table) {
                 $table->id();
                 $table->morphs('timesheetable');
